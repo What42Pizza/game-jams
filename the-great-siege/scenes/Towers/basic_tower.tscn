@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b2huo4clisefw"]
+
+[ext_resource type="PackedScene" uid="uid://b1v2w42wjqide" path="res://scenes/Towers/tower.tscn" id="1_vi6rj"]
+[ext_resource type="Script" uid="uid://d25dfc582j6gc" path="res://scenes/Towers/basic_tower.gd" id="2_ib5uk"]
+[ext_resource type="Texture2D" uid="uid://dkcq03l151wrs" path="res://graphics/towers/basic-turret.png" id="3_32ryr"]
+[ext_resource type="AudioStream" uid="uid://ro7vq80my7k5" path="res://sounds/basic-tower.mp3" id="4_b447q"]
+
+[node name="BasicTower" unique_id=18763498 instance=ExtResource("1_vi6rj")]
+script = ExtResource("2_ib5uk")
+
+[node name="Turret" parent="." index="1" unique_id=321716592]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_32ryr")
+hframes = 3
+
+[node name="RangeIndicator" parent="." index="2" unique_id=1781302943]
+modulate = Color(1, 1, 1, 0.76862746)
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="." index="3" unique_id=1858858924]
+stream = ExtResource("4_b447q")
+volume_db = -10.0
+max_polyphony = 30

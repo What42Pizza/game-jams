@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c0xqsmnje1vhi"]
+
+[ext_resource type="Script" uid="uid://cqrb8367xwqx4" path="res://scenes/Bullets/wizzard_ball.gd" id="1_lynue"]
+[ext_resource type="Texture2D" uid="uid://cddpfj85g6wy0" path="res://graphics/bullet/cannon-ball.png" id="2_lynue"]
+
+[node name="Node2D" type="Node2D" unique_id=159581636]
+script = ExtResource("1_lynue")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1261428313]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_lynue")

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ddtr2wnv8sico"]
+
+[ext_resource type="Script" uid="uid://d0vxm6wwp0602" path="res://scenes/Enemies/basic_enemy.gd" id="1_2uwaf"]
+[ext_resource type="Texture2D" uid="uid://nfydc48cgabj" path="res://graphics/enemies/basic-enemy.png" id="2_rcp1y"]
+
+[node name="BasicEnemy" type="Area2D" unique_id=672201249]
+script = ExtResource("1_2uwaf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=52855860]
+position = Vector2(5, 0)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("2_rcp1y")
+hframes = 4

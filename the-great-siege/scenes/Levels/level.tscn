@@ -1,0 +1,592 @@
+[gd_scene format=3 uid="uid://hv3al08tbps7"]
+
+[ext_resource type="Script" uid="uid://d206grxtgkhw5" path="res://scenes/Levels/level.gd" id="1_muv8p"]
+[ext_resource type="Script" uid="uid://c30w06vjenose" path="res://scenes/Levels/tower_placement_manager.gd" id="3_eg4yq"]
+[ext_resource type="AudioStream" uid="uid://j6wwfo0pvol" path="res://sounds/kill-sound.mp3" id="3_f2oql"]
+[ext_resource type="Script" uid="uid://dd5r4nyhcad7p" path="res://scenes/Levels/wave_manager.gd" id="3_tc7dm"]
+[ext_resource type="Script" uid="uid://c5gwal3lwtwbc" path="res://scenes/Levels/game_manager.gd" id="4_eg4yq"]
+[ext_resource type="Texture2D" uid="uid://dd6xfwx2h4iot" path="res://graphics/ui/bottom-bar.png" id="5_fsqur"]
+[ext_resource type="Texture2D" uid="uid://cfnir8artsc1r" path="res://graphics/misc/background.png" id="5_i35yb"]
+[ext_resource type="Script" uid="uid://kaq5ysvtkcl7" path="res://scenes/Levels/basic_tower_button.gd" id="6_87hxj"]
+[ext_resource type="AudioStream" uid="uid://dd371dgtvnqkp" path="res://sounds/background-music.mp3" id="6_ol8dr"]
+[ext_resource type="Texture2D" uid="uid://5ot0m2nhh3he" path="res://graphics/misc/background-castle-wall-shadow.png" id="6_px5jg"]
+[ext_resource type="Texture2D" uid="uid://cxm353uk7a1rm" path="res://graphics/misc/background-castle-wall.png" id="7_f2oql"]
+[ext_resource type="Texture2D" uid="uid://dkcq03l151wrs" path="res://graphics/towers/basic-turret.png" id="8_42npc"]
+[ext_resource type="Texture2D" uid="uid://rnf0awald38x" path="res://graphics/ui/selection-indicator.png" id="9_he7fi"]
+[ext_resource type="Texture2D" uid="uid://biprinp6c2yy4" path="res://graphics/ui/game-over-background.png" id="10_8hdhy"]
+[ext_resource type="FontFile" uid="uid://dr7jik35s7mvu" path="res://fonts/PlayfairDisplay-Regular.ttf" id="10_8ydj0"]
+[ext_resource type="Script" uid="uid://c0sgmbueq8x0i" path="res://scenes/Levels/remove_tower_button.gd" id="10_neck2"]
+[ext_resource type="Texture2D" uid="uid://4b5lyfmnijlu" path="res://graphics/ui/delete-icon.png" id="11_bg4jh"]
+[ext_resource type="Script" uid="uid://2bisfa8aotf" path="res://scenes/Levels/mine_button.gd" id="12_43ksg"]
+[ext_resource type="Texture2D" uid="uid://bmamtvjbrofy2" path="res://graphics/towers/mine.png" id="12_bg4jh"]
+[ext_resource type="Texture2D" uid="uid://clqwgkygp527" path="res://graphics/towers/basic-tower-base.png" id="13_px5jg"]
+[ext_resource type="Script" uid="uid://dgwrkw02xxyfw" path="res://scenes/Levels/wizzard_button.gd" id="14_1meta"]
+[ext_resource type="Texture2D" uid="uid://dsk8tehtve8ll" path="res://graphics/towers/wizzard.png" id="14_loupo"]
+
+[sub_resource type="Curve2D" id="Curve2D_0sda6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -54, 549, 0, 0, 0, 0, 44, 495, 0, 0, 0, 0, 63, 491, 0, 0, 0, 0, 81, 490, 0, 0, 0, 0, 96, 492, 0, 0, 0, 0, 109, 501, 0, 0, 0, 0, 151, 545, 0, 0, 0, 0, 166, 557, 0, 0, 0, 0, 181, 565, 0, 0, 0, 0, 206, 569, 0, 0, 0, 0, 286, 564, 0, 0, 0, 0, 359, 548, 0, 0, 0, 0, 378, 540, 0, 0, 0, 0, 394, 531, 0, 0, 0, 0, 404, 514, 0, 0, 0, 0, 415, 485, 0, 0, 0, 0, 438, 403, 0, 0, 0, 0, 444, 388, 0, 0, 0, 0, 453, 379, 0, 0, 0, 0, 469, 369, 0, 0, 0, 0, 490, 364, 0, 0, 0, 0, 516, 365, 0, 0, 0, 0, 551, 376, 0, 0, 0, 0, 623, 406, 0, 0, 0, 0, 658, 413, 0, 0, 0, 0, 691, 416, 0, 0, 0, 0, 730, 414, 0, 0, 0, 0, 791, 402, 0, 0, 0, 0, 829, 399, 0, 0, 0, 0, 865, 401, 0, 0, 0, 0, 898, 404, 0, 0, 0, 0, 925, 411, 0, 0, 0, 0, 943, 424, 0, 0, 0, 0, 955, 440, 0, 0, 0, 0, 956, 461, 0, 0, 0, 0, 944, 483, 0, 0, 0, 0, 940, 499, 0, 0, 0, 0, 943.08466, 512.6574, 0, 0, 0, 0, 950, 526, 0, 0, 0, 0, 971, 544, 0, 0, 0, 0, 1001, 564, 0, 0, 0, 0, 1027, 574, 0, 0, 0, 0, 1055, 577, 0, 0, 0, 0, 1081, 573, 0, 0, 0, 0, 1100, 567, 0, 0, 0, 0, 1124, 562, 0, 0, 0, 0, 1149, 560, 0, 0, 0, 0, 1360, 558)
+}
+point_count = 48
+
+[sub_resource type="Curve2D" id="Curve2D_tc7dm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -57, 134, 0, 0, 0, 0, -3, 114, 0, 0, 0, 0, 39, 105, 0, 0, 0, 0, 76, 106, 0, 0, 0, 0, 111, 110, 0, 0, 0, 0, 127, 121, 0, 0, 0, 0, 135, 136, 0, 0, 0, 0, 141, 151, 0, 0, 0, 0, 137, 168, 0, 0, 0, 0, 107, 231, 0, 0, 0, 0, 100, 247, 0, 0, 0, 0, 100, 263, 0, 0, 0, 0, 109, 281, 0, 0, 0, 0, 126, 293, 0, 0, 0, 0, 151, 300, 0, 0, 0, 0, 184, 304, 0, 0, 0, 0, 216, 301, 0, 0, 0, 0, 239, 288, 0, 0, 0, 0, 258, 265, 0, 0, 0, 0, 313, 199, 0, 0, 0, 0, 332, 176, 0, 0, 0, 0, 360, 167, 0, 0, 0, 0, 387, 167, 0, 0, 0, 0, 409, 176, 0, 0, 0, 0, 445, 196, 0, 0, 0, 0, 497, 219, 0, 0, 0, 0, 526, 228, 0, 0, 0, 0, 563, 229, 0, 0, 0, 0, 616, 205, 0, 0, 0, 0, 664, 181, 0, 0, 0, 0, 720, 161, 0, 0, 0, 0, 751, 158, 0, 0, 0, 0, 784, 166, 0, 0, 0, 0, 841, 186, 0, 0, 0, 0, 869, 188, 0, 0, 0, 0, 897, 181, 0, 0, 0, 0, 940, 160, 0, 0, 0, 0, 971, 143, 0, 0, 0, 0, 993, 140, 0, 0, 0, 0, 1014, 142, 0, 0, 0, 0, 1041, 158, 0, 0, 0, 0, 1070, 182, 0, 0, 0, 0, 1099, 196, 0, 0, 0, 0, 1122, 201, 0, 0, 0, 0, 1143, 202, 0, 0, 0, 0, 1185, 197, 0, 0, 0, 0, 1360, 191)
+}
+point_count = 47
+
+[node name="Level" type="Node2D" unique_id=1851785652]
+script = ExtResource("1_muv8p")
+
+[node name="WaveManager" type="Node2D" parent="." unique_id=1665557926]
+script = ExtResource("3_tc7dm")
+
+[node name="KillEnemySound" type="AudioStreamPlayer" parent="WaveManager" unique_id=1682694799]
+stream = ExtResource("3_f2oql")
+volume_db = -14.0
+max_polyphony = 30
+
+[node name="TowerPlacementManager" type="Node2D" parent="." unique_id=451767500]
+script = ExtResource("3_eg4yq")
+
+[node name="GameManager" type="Node2D" parent="." unique_id=648325147]
+script = ExtResource("4_eg4yq")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="GameManager" unique_id=46869173]
+stream = ExtResource("6_ol8dr")
+volume_db = -8.0
+autoplay = true
+parameters/looping = true
+
+[node name="World" type="Node2D" parent="." unique_id=1105972270]
+
+[node name="MainPath1" type="Path2D" parent="World" unique_id=545525032]
+top_level = true
+position = Vector2(-3, -38)
+curve = SubResource("Curve2D_0sda6")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="World/MainPath1" unique_id=2055762579]
+position = Vector2(1189.1934, 559.619)
+rotation = -0.009478389
+progress = 1537.268
+
+[node name="MainPath2" type="Path2D" parent="World" unique_id=2047880436]
+top_level = true
+position = Vector2(-1, -20)
+curve = SubResource("Curve2D_tc7dm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="World/MainPath2" unique_id=894439893]
+position = Vector2(1186.1273, 196.95381)
+rotation = -0.068630636
+progress = 1565.445
+
+[node name="PlacementSlots" type="Node2D" parent="World" unique_id=2040145414]
+
+[node name="Slot" type="Node2D" parent="World/PlacementSlots" unique_id=1574248647]
+position = Vector2(48, 152)
+
+[node name="Slot2" type="Node2D" parent="World/PlacementSlots" unique_id=1149759614]
+position = Vector2(185, 215)
+
+[node name="Slot3" type="Node2D" parent="World/PlacementSlots" unique_id=670763514]
+position = Vector2(226, 139)
+
+[node name="Slot4" type="Node2D" parent="World/PlacementSlots" unique_id=882838030]
+position = Vector2(541, 125)
+
+[node name="Slot5" type="Node2D" parent="World/PlacementSlots" unique_id=1283894741]
+position = Vector2(334, 54)
+
+[node name="Slot6" type="Node2D" parent="World/PlacementSlots" unique_id=213020911]
+position = Vector2(360, 240)
+
+[node name="Slot7" type="Node2D" parent="World/PlacementSlots" unique_id=845486407]
+position = Vector2(345, 341)
+
+[node name="Slot8" type="Node2D" parent="World/PlacementSlots" unique_id=1467753365]
+position = Vector2(324, 428)
+
+[node name="Slot9" type="Node2D" parent="World/PlacementSlots" unique_id=1456410967]
+position = Vector2(214, 446)
+
+[node name="Slot10" type="Node2D" parent="World/PlacementSlots" unique_id=1327805023]
+position = Vector2(237, 365)
+
+[node name="Slot11" type="Node2D" parent="World/PlacementSlots" unique_id=992446638]
+position = Vector2(111, 366)
+
+[node name="Slot12" type="Node2D" parent="World/PlacementSlots" unique_id=271150324]
+position = Vector2(208, 43)
+
+[node name="Slot13" type="Node2D" parent="World/PlacementSlots" unique_id=571435408]
+position = Vector2(635, 72)
+
+[node name="Slot14" type="Node2D" parent="World/PlacementSlots" unique_id=927150510]
+position = Vector2(756, 37)
+
+[node name="Slot15" type="Node2D" parent="World/PlacementSlots" unique_id=1980188774]
+position = Vector2(855, 83)
+
+[node name="Slot16" type="Node2D" parent="World/PlacementSlots" unique_id=461782741]
+position = Vector2(944, 42)
+
+[node name="Slot17" type="Node2D" parent="World/PlacementSlots" unique_id=1666574571]
+position = Vector2(1045, 45)
+
+[node name="Slot18" type="Node2D" parent="World/PlacementSlots" unique_id=1234778799]
+position = Vector2(462, 56)
+
+[node name="Slot19" type="Node2D" parent="World/PlacementSlots" unique_id=461962054]
+position = Vector2(36, 319)
+
+[node name="Slot20" type="Node2D" parent="World/PlacementSlots" unique_id=386598240]
+position = Vector2(507, 417)
+
+[node name="Slot21" type="Node2D" parent="World/PlacementSlots" unique_id=1916656201]
+position = Vector2(1029, 451)
+
+[node name="Slot22" type="Node2D" parent="World/PlacementSlots" unique_id=815549645]
+position = Vector2(852, 447)
+
+[node name="Slot23" type="Node2D" parent="World/PlacementSlots" unique_id=742544967]
+position = Vector2(860, 533)
+
+[node name="Slot24" type="Node2D" parent="World/PlacementSlots" unique_id=1042895092]
+position = Vector2(646, 464)
+
+[node name="Slot25" type="Node2D" parent="World/PlacementSlots" unique_id=461031791]
+position = Vector2(551, 489)
+
+[node name="Slot26" type="Node2D" parent="World/PlacementSlots" unique_id=679428870]
+position = Vector2(754, 486)
+
+[node name="Slot28" type="Node2D" parent="World/PlacementSlots" unique_id=1576707789]
+position = Vector2(441, 265)
+
+[node name="Slot29" type="Node2D" parent="World/PlacementSlots" unique_id=912134906]
+position = Vector2(753, 231)
+
+[node name="Slot30" type="Node2D" parent="World/PlacementSlots" unique_id=594454083]
+position = Vector2(477, 524)
+
+[node name="Slot31" type="Node2D" parent="World/PlacementSlots" unique_id=768393588]
+position = Vector2(1051, 359)
+
+[node name="Slot32" type="Node2D" parent="World/PlacementSlots" unique_id=2030203836]
+position = Vector2(858, 278)
+
+[node name="Slot33" type="Node2D" parent="World/PlacementSlots" unique_id=26974056]
+position = Vector2(1039, 266)
+
+[node name="Slot34" type="Node2D" parent="World/PlacementSlots" unique_id=1617469633]
+position = Vector2(694, 294)
+
+[node name="Slot35" type="Node2D" parent="World/PlacementSlots" unique_id=1265605561]
+position = Vector2(956, 235)
+
+[node name="Slot36" type="Node2D" parent="World/PlacementSlots" unique_id=237272583]
+position = Vector2(596, 279)
+
+[node name="Slot37" type="Node2D" parent="World/PlacementSlots" unique_id=984874215]
+position = Vector2(58, 537)
+
+[node name="Background" type="Sprite2D" parent="World" unique_id=1403482060]
+z_index = -100
+position = Vector2(579.50006, 287)
+scale = Vector2(1.0191348, 0.92263603)
+texture = ExtResource("5_i35yb")
+
+[node name="CastleWallShadow" type="Sprite2D" parent="World/Background" unique_id=1361007715]
+position = Vector2(-42.19271, 2.3841858e-06)
+scale = Vector2(1, 0.9999999)
+texture = ExtResource("6_px5jg")
+
+[node name="CastleWall" type="Sprite2D" parent="World/Background" unique_id=268267423]
+z_index = 1000
+position = Vector2(-31.889847, -3.0398369e-05)
+texture = ExtResource("7_f2oql")
+
+[node name="Ui" type="Node2D" parent="." unique_id=1411699281]
+z_index = 4096
+
+[node name="BottomBar" type="Sprite2D" parent="Ui" unique_id=545202099]
+texture_filter = 1
+position = Vector2(581.00006, 586)
+scale = Vector2(0.9872001, 1.0333335)
+texture = ExtResource("5_fsqur")
+
+[node name="Control" type="Control" parent="Ui" unique_id=968271566]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 11.0
+offset_top = 591.0
+offset_right = 61.0
+offset_bottom = 641.0
+
+[node name="HealthLabel" type="Label" parent="Ui/Control" unique_id=1215054901]
+layout_mode = 0
+offset_left = 873.0
+offset_top = -2.0
+offset_right = 1071.0
+offset_bottom = 57.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_8ydj0")
+theme_override_font_sizes/font_size = 35
+text = "Health: 100"
+
+[node name="MoneyLabel" type="Label" parent="Ui/Control" unique_id=828560504]
+layout_mode = 0
+offset_left = 614.0
+offset_top = -2.0
+offset_right = 897.0
+offset_bottom = 56.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_8ydj0")
+theme_override_font_sizes/font_size = 35
+text = "Resources: 10"
+
+[node name="GameOverScreen" type="TextureRect" parent="Ui/Control" unique_id=1335076171]
+visible = false
+z_index = 100
+layout_mode = 0
+offset_left = 52.0
+offset_top = -553.0
+offset_right = 1032.0
+offset_bottom = -77.0
+texture = ExtResource("10_8hdhy")
+
+[node name="GameOverLabel" type="Label" parent="Ui/Control/GameOverScreen" unique_id=1389433366]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 94.0
+offset_right = 860.0
+offset_bottom = 359.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_8ydj0")
+theme_override_font_sizes/font_size = 68
+text = "Game Over!
+Enemies Defeated: -----"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RemoveTowerButton" type="Button" parent="Ui/Control" unique_id=149859633]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 56.0
+offset_bottom = 50.0
+script = ExtResource("10_neck2")
+
+[node name="Base" type="Sprite2D" parent="Ui/Control/RemoveTowerButton" unique_id=932475355]
+position = Vector2(25, 25)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("11_bg4jh")
+
+[node name="SelectionIndicator" type="Sprite2D" parent="Ui/Control/RemoveTowerButton" unique_id=669895979]
+visible = false
+position = Vector2(25.000002, 24.999973)
+scale = Vector2(0.7826087, 0.7826089)
+texture = ExtResource("9_he7fi")
+
+[node name="InfoPanel" type="Control" parent="Ui/Control/RemoveTowerButton" unique_id=1033689224]
+visible = false
+anchors_preset = 0
+offset_top = -90.0
+offset_right = 65.0
+offset_bottom = -4.0
+
+[node name="TextureRect" type="TextureRect" parent="Ui/Control/RemoveTowerButton/InfoPanel" unique_id=349639964]
+layout_mode = 0
+offset_left = -28.0
+offset_top = -68.0
+offset_right = 276.0
+offset_bottom = 86.0
+texture = ExtResource("10_8hdhy")
+expand_mode = 1
+flip_v = true
+
+[node name="Label" type="Label" parent="Ui/Control/RemoveTowerButton/InfoPanel/TextureRect" unique_id=478599870]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 34.0
+offset_right = 154.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_8ydj0")
+theme_override_font_sizes/font_size = 15
+text = "Removes a tower"
+
+[node name="Label2" type="Label" parent="Ui/Control/RemoveTowerButton/InfoPanel/TextureRect" unique_id=1996484559]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 37.0
+offset_right = 170.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_8ydj0")
+theme_override_font_sizes/font_size = 15
+text = "
+- Does not return any resources"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Ui/Control/RemoveTowerButton" unique_id=1247158019]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 27.0
+offset_right = 56.0
+offset_bottom = 58.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "1"
+
+[node name="BasicTowerButton" type="Button" parent="Ui/Control" unique_id=1016720371]
+layout_mode = 0
+offset_left = 69.0
+offset_right = 119.0
+offset_bottom = 50.0
+script = ExtResource("6_87hxj")
+
+[node name="Base" type="Sprite2D" parent="Ui/Control/BasicTowerButton" unique_id=1001286593]
+position = Vector2(25, 25.000029)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_px5jg")
+
+[node name="Turret" type="Sprite2D" parent="Ui/Control/BasicTowerButton" unique_id=405173285]
+position = Vector2(25.000002, 25.00002)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("8_42npc")
+hframes = 3
+frame = 2
+
+[node name="SelectionIndicator" type="Sprite2D" parent="Ui/Control/BasicTowerButton" unique_id=1262738822]
+visible = false
+position = Vector2(25.000002, 24.999973)
+scale = Vector2(0.7826087, 0.7826089)
+texture = ExtResource("9_he7fi")
+
+[node name="InfoPanel" type="Control" parent="Ui/Control/BasicTowerButton" unique_id=1756716765]
+visible = false
+anchors_preset = 0
+offset_top = -90.0
+offset_right = 157.0
+offset_bottom = -4.0
+
+[node name="TextureRect" type="TextureRect" parent="Ui/Control/BasicTowerButton/InfoPanel" unique_id=1265057065]
+layout_mode = 0
+offset_left = -48.0
+offset_top = -89.0
+offset_right = 257.0
+offset_bottom = 86.0
+texture = ExtResource("10_8hdhy")
+expand_mode = 1
+flip_v = true
+
+[node name="Label" type="Label" parent="Ui/Control/BasicTowerButton/InfoPanel/TextureRect" unique_id=1880017099]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 32.0
+offset_right = 160.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_8ydj0")
+theme_override_font_sizes/font_size = 15
+text = "Basic Tower"
+
+[node name="Label2" type="Label" parent="Ui/Control/BasicTowerButton/InfoPanel/TextureRect" unique_id=146563695]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 34.0
+offset_right = 170.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_8ydj0")
+theme_override_font_sizes/font_size = 15
+text = "
+- Cooldown: 1.5s
+- Damage: 100
+- Cost: 10"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Ui/Control/BasicTowerButton" unique_id=24770563]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 27.0
+offset_right = 57.0
+offset_bottom = 92.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "2
+"
+
+[node name="WizzardButton" type="Button" parent="Ui/Control" unique_id=486355575]
+layout_mode = 0
+offset_left = 133.0
+offset_right = 183.0
+offset_bottom = 50.0
+script = ExtResource("14_1meta")
+
+[node name="Base" type="Sprite2D" parent="Ui/Control/WizzardButton" unique_id=592340511]
+position = Vector2(25, 25.000029)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("14_loupo")
+hframes = 3
+frame = 2
+
+[node name="SelectionIndicator" type="Sprite2D" parent="Ui/Control/WizzardButton" unique_id=1782788337]
+visible = false
+position = Vector2(25.000002, 24.999973)
+scale = Vector2(0.7826087, 0.7826089)
+texture = ExtResource("9_he7fi")
+
+[node name="InfoPanel" type="Control" parent="Ui/Control/WizzardButton" unique_id=835102677]
+visible = false
+anchors_preset = 0
+offset_left = 13.0
+offset_top = -110.0
+offset_right = 205.0
+offset_bottom = -4.0
+
+[node name="TextureRect" type="TextureRect" parent="Ui/Control/WizzardButton/InfoPanel" unique_id=726277615]
+layout_mode = 0
+offset_left = -53.0
+offset_top = -58.0
+offset_right = 219.0
+offset_bottom = 106.0
+texture = ExtResource("10_8hdhy")
+expand_mode = 1
+flip_v = true
+
+[node name="Label" type="Label" parent="Ui/Control/WizzardButton/InfoPanel/TextureRect" unique_id=1829179492]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 29.0
+offset_right = 155.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_8ydj0")
+theme_override_font_sizes/font_size = 15
+text = "Wizzard"
+
+[node name="Label2" type="Label" parent="Ui/Control/WizzardButton/InfoPanel/TextureRect" unique_id=2067980691]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 30.0
+offset_right = 167.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_8ydj0")
+theme_override_font_sizes/font_size = 15
+text = "
+- Cooldown: 2.0s
+- Damage: 250
+- Cost: 20"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Ui/Control/WizzardButton" unique_id=76553032]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 27.0
+offset_right = 57.0
+offset_bottom = 92.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "3"
+
+[node name="MineButton" type="Button" parent="Ui/Control" unique_id=181817503]
+layout_mode = 0
+offset_left = 198.0
+offset_right = 248.0
+offset_bottom = 50.0
+script = ExtResource("12_43ksg")
+
+[node name="Base" type="Sprite2D" parent="Ui/Control/MineButton" unique_id=392180394]
+position = Vector2(25, 25.000029)
+scale = Vector2(0.381, 0.381)
+texture = ExtResource("12_bg4jh")
+
+[node name="SelectionIndicator" type="Sprite2D" parent="Ui/Control/MineButton" unique_id=1471578651]
+visible = false
+position = Vector2(25.000002, 24.999973)
+scale = Vector2(0.7826087, 0.7826089)
+texture = ExtResource("9_he7fi")
+
+[node name="InfoPanel" type="Control" parent="Ui/Control/MineButton" unique_id=1905370550]
+visible = false
+anchors_preset = 0
+offset_left = 13.0
+offset_top = -110.0
+offset_right = 205.0
+offset_bottom = -4.0
+
+[node name="TextureRect" type="TextureRect" parent="Ui/Control/MineButton/InfoPanel" unique_id=744661925]
+layout_mode = 0
+offset_left = -57.0
+offset_top = -40.0
+offset_right = 219.0
+offset_bottom = 106.0
+texture = ExtResource("10_8hdhy")
+expand_mode = 1
+flip_v = true
+
+[node name="Label" type="Label" parent="Ui/Control/MineButton/InfoPanel/TextureRect" unique_id=2057266044]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 28.0
+offset_right = 161.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_8ydj0")
+theme_override_font_sizes/font_size = 15
+text = "Mine"
+
+[node name="Label2" type="Label" parent="Ui/Control/MineButton/InfoPanel/TextureRect" unique_id=846687524]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 30.0
+offset_right = 250.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_8ydj0")
+theme_override_font_sizes/font_size = 15
+text = "
+- Effect: +0.25 resources/sec
+- Cost: 15"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Ui/Control/MineButton" unique_id=89741229]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 27.0
+offset_right = 57.0
+offset_bottom = 92.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "4"
+
+[node name="OutsideScreen1" type="ColorRect" parent="Ui/Control" unique_id=1374808508]
+layout_mode = 0
+offset_left = 1141.0
+offset_top = -591.0
+offset_right = 8320.0
+offset_bottom = 3617.0
+color = Color(0, 0, 0, 1)
+
+[node name="OutsideScreen2" type="ColorRect" parent="Ui/Control" unique_id=1389790881]
+layout_mode = 0
+offset_left = -11.0
+offset_top = 57.0
+offset_right = 7168.0
+offset_bottom = 4265.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="button_down" from="Ui/Control/RemoveTowerButton" to="Ui/Control/RemoveTowerButton" method="_on_button_down"]
+[connection signal="mouse_entered" from="Ui/Control/RemoveTowerButton" to="Ui/Control/RemoveTowerButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Ui/Control/RemoveTowerButton" to="Ui/Control/RemoveTowerButton" method="_on_mouse_exited"]
+[connection signal="button_down" from="Ui/Control/BasicTowerButton" to="Ui/Control/BasicTowerButton" method="_on_button_down"]
+[connection signal="mouse_entered" from="Ui/Control/BasicTowerButton" to="Ui/Control/BasicTowerButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Ui/Control/BasicTowerButton" to="Ui/Control/BasicTowerButton" method="_on_mouse_exited"]
+[connection signal="button_down" from="Ui/Control/WizzardButton" to="Ui/Control/WizzardButton" method="_on_button_down"]
+[connection signal="mouse_entered" from="Ui/Control/WizzardButton" to="Ui/Control/WizzardButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Ui/Control/WizzardButton" to="Ui/Control/WizzardButton" method="_on_mouse_exited"]
+[connection signal="button_down" from="Ui/Control/MineButton" to="Ui/Control/MineButton" method="_on_button_down"]
+[connection signal="mouse_entered" from="Ui/Control/MineButton" to="Ui/Control/MineButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Ui/Control/MineButton" to="Ui/Control/MineButton" method="_on_mouse_exited"]

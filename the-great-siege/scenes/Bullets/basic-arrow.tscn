@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cguoeawfkmqej"]
+
+[ext_resource type="Texture2D" uid="uid://cmy2vrqoqflm8" path="res://graphics/bullet/basic-arrow.png" id="1_assnv"]
+[ext_resource type="Script" uid="uid://ubtvrngcjt1c" path="res://scenes/Bullets/basic_arrow.gd" id="1_wiwh3"]
+
+[node name="Node2D" type="Node2D" unique_id=159581636]
+script = ExtResource("1_wiwh3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1261428313]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_assnv")

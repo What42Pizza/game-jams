@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dys7d2cxqhpi1"]
+
+[ext_resource type="PackedScene" uid="uid://b1v2w42wjqide" path="res://scenes/Towers/tower.tscn" id="1_bj7xq"]
+[ext_resource type="Script" uid="uid://3yvo81iycmvk" path="res://scenes/Towers/mine.gd" id="2_88s0v"]
+[ext_resource type="Texture2D" uid="uid://bmamtvjbrofy2" path="res://graphics/towers/mine.png" id="2_jrjlj"]
+
+[node name="Tower" unique_id=18763498 instance=ExtResource("1_bj7xq")]
+script = ExtResource("2_88s0v")
+
+[node name="Base" parent="." index="0" unique_id=1964407898]
+visible = false
+
+[node name="Turret" parent="." index="1" unique_id=321716592]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_jrjlj")
+
+[node name="RangeIndicator" parent="." index="2" unique_id=1781302943]
+visible = false

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dyx5e46umqgfx"]
+
+[ext_resource type="Script" uid="uid://80mkm7p1sa8" path="res://scenes/Enemies/speed_enemy.gd" id="1_y156m"]
+[ext_resource type="Texture2D" uid="uid://cy0ihbdxcwycb" path="res://graphics/enemies/speed-enemy.png" id="2_y156m"]
+
+[node name="Enemy" type="Area2D" unique_id=672201249]
+script = ExtResource("1_y156m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=52855860]
+position = Vector2(5, 0)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("2_y156m")
+hframes = 4

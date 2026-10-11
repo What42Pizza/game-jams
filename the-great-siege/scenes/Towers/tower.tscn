@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b1v2w42wjqide"]
+
+[ext_resource type="Script" uid="uid://byjc4tbws4los" path="res://scenes/Towers/tower.gd" id="1_1jyhu"]
+[ext_resource type="Texture2D" uid="uid://clqwgkygp527" path="res://graphics/towers/basic-tower-base.png" id="2_cggbr"]
+[ext_resource type="Texture2D" uid="uid://didfb3dm0wy44" path="res://graphics/ui/range-indicator.png" id="3_cggbr"]
+
+[node name="Tower" type="Node2D" unique_id=18763498]
+script = ExtResource("1_1jyhu")
+
+[node name="Base" type="Sprite2D" parent="." unique_id=1964407898]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_cggbr")
+
+[node name="Turret" type="Sprite2D" parent="." unique_id=321716592]
+
+[node name="RangeIndicator" type="Sprite2D" parent="." unique_id=1781302943]
+texture = ExtResource("3_cggbr")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cxcn0wieo8ri8"]
+
+[ext_resource type="Script" uid="uid://be43n7jmytkl8" path="res://scenes/Misc/placement_indicator.gd" id="1_nd8c5"]
+[ext_resource type="Texture2D" uid="uid://c85ae00snl4j5" path="res://graphics/misc/placement-indicator.png" id="1_tsvdg"]
+
+[node name="PlacementIndicator" type="Node2D" unique_id=1153851090]
+script = ExtResource("1_nd8c5")
+
+[node name="PlacementIcon" type="Sprite2D" parent="." unique_id=1257689186]
+modulate = Color(1, 1, 1, 0.38431373)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_tsvdg")

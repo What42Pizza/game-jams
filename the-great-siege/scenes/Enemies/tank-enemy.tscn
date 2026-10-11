@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cqosrbqgqnj26"]
+
+[ext_resource type="Script" uid="uid://p7u848wi855g" path="res://scenes/Enemies/tank_enemy.gd" id="1_p6eej"]
+[ext_resource type="Texture2D" uid="uid://bd42fpleqj6t2" path="res://graphics/enemies/tank-enemy.png" id="2_p6eej"]
+
+[node name="Enemy" type="Area2D" unique_id=672201249]
+script = ExtResource("1_p6eej")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=52855860]
+position = Vector2(3, 1)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_p6eej")
+hframes = 2
